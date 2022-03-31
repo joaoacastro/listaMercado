@@ -1,30 +1,32 @@
 function addItem(){
-    var listaProduto = document.getElementById("listaProduto");
+    var listaItem = document.getElementById("listaItem");
     var listaQuantidade = document.getElementById("listaQuantidade");
     var listaVlrUnit = document.getElementById("listaVlrUnit");
     var listaTotalProduto = document.getElementById("listaTotalProduto");
 
     var totalCompra = document.getElementById("valorTotalCompra");
-    
-    var produto = document.getElementById("produto").value;
-    var quantidade = document.getElementById("qtdeInput").value;
-    var vlrUnit = document.getElementById("vlrUnitInput").value;
 
-    var subTotalUnit = vlrUnit * quantidade;
+    var produto = {
+        item: document.getElementById("item").value,
+        quantidade: document.getElementById("qtdeInput").value,
+        valorUnitario: document.getElementById("vlrUnitInput").value,
+        totalItem:
+            document.getElementById("qtdeInput").value *
+            document.getElementById("vlrUnitInput").value
+    };
 
-    var item = '<li>' + produto + '</li>';
-    var quantidade = '<li>' + quantidade + '</li>';
-    var valorUnitario = '<li> R$ ' + vlrUnit + '</li>';
+    console.log(produto)
+
+    var item = '<li>' + produto.item + '</li>';
+    var quantidade = '<li>' + produto.quantidade + '</li>';
+    var valorUnitario = '<li> R$ ' + produto.valorUnitario + '</li>';
+    var subTotal = '<li> R$ ' + produto.totalItem + '</li>';
     
-    var subTotal = '<li> R$ ' + subTotalUnit + '</li>';
-    
-    listaProduto.innerHTML += item;
+    listaItem.innerHTML += item;
     listaQuantidade.innerHTML += quantidade;
     listaVlrUnit.innerHTML += valorUnitario;
     listaTotalProduto.innerHTML += subTotal;
-    
-    totalCompra.innerHTML += subTotalUnit;
-    
-    console.log(typeof(totalCompra));
-    console.log(Object.values(totalCompra))
+
+    totalCompra.innerHTML += produto.totalItem;
+
 }

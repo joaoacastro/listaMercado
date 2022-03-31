@@ -11,10 +11,11 @@
 .lista {
     display: flex;
     justify-content: center;
+    color: white;
     background-color: rgb(109, 109, 109);
 }
 
-.lista .listaProduto li,
+.lista .listaItem li,
 .lista .listaQuantidade li,
 .lista .listaVlrUnit li,
 .lista .listaTotalProduto li{

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/global.css">
 </head>
 <body>
+    <h2 class="titulo">.:| Lista de Compras |:.</h2>
     <div class="container">
         <div class="inserirProdutos">
             <input type="text" id="item" placeholder="Produto">
@@ -20,10 +21,17 @@
                 <button class="btn" id="btn" onclick="addItem()">Adicionar Ítem</button>
             </div>
         </div>
-    
+    <div class="compra">
+        <div class="quantProdutos">Quantidade de Volumes: &nbsp
+            <div class="quantTotalProdutos" id="quantTotalProdutos"></div>
+        </div>
+        <div class="totalProdutos">Quantidade de ítens: &nbsp
+            <div class="quantTotalItens" id="quantTotalItens"></div>
+        </div>
         <div class="valorCompra">Valor Total Compra: R$&nbsp
             <div class="valorTotalCompra" id="valorTotalCompra"></div>
         </div>
+    </div>
     </div>
 
     <div class="lista">

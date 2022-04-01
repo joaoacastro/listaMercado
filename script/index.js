@@ -1,13 +1,12 @@
 var produtos = [];
+var quantItens = [];
 
 function addItem(){
     var listaItem = document.getElementById("listaItem");
     var listaQuantidade = document.getElementById("listaQuantidade");
     var listaVlrUnit = document.getElementById("listaVlrUnit");
     var listaTotalProduto = document.getElementById("listaTotalProduto");
-
     var totalCompra = document.getElementById("valorTotalCompra");
-
     var totalProdutos = document.getElementById("quantTotalProdutos");
 
     var totalItens = document.getElementById("quantTotalItens");
@@ -23,6 +22,8 @@ function addItem(){
 
     produtos.push(produto);
     
+    quantItens.push(produto.quantidade);
+
     var item = '<li>' + produto.item + '</li>';
     var quantidade = '<li>' + produto.quantidade + '</li>';
     var valorUnitario = '<li> R$ ' + produto.valorUnitario + '</li>';
@@ -34,23 +35,21 @@ function addItem(){
     listaTotalProduto.innerHTML += subTotal;
 
     totalProdutos.innerHTML = produtos.length;
-
-    console.log(typeof(subTotal));
     
     var total = produtos.reduce(getTotal, 0);
     function getTotal(total, item){
         return total + (item.valorUnitario * item.quantidade);
     }
 
-    // fazer a soma da quantidade
+    var quantTotalItens = quantItens.reduce(getTotalItens, 0);
+    function getTotalItens(valorAcumulado, produto){
+        return parseFloat(valorAcumulado) + parseFloat(produto);
+    }
 
-    var totalQuantidade = 0;
-    totalQuantidade += parseFloat(produto.quantidade);
+    totalItens.innerHTML = quantTotalItens;
 
     totalCompra.innerHTML = ''
     totalCompra.innerHTML = total.toFixed(2);
-
-    totalItens.innerHTML = totalQuantidade;
 
     document.getElementById("item").value = '';
     document.getElementById("item").focus();

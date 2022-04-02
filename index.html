@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.:| Lista de Compras |:.</title>
+
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/responsivo.css">
+</head>
+<body>
+    <h2 class="titulo" style="font-size: 22px">.:| Lista de Compras |:.</h2>
+    <table class="container">
+
+        <div class="inserirProdutos">
+            <div class="item">
+                <label for="Produto">Produto:</label>
+                <br>
+                <input type="text" id="item" placeholder="Produto" required>
+            </div>
+            
+            <div class="quantidade">
+                <label for="Quantidade">Quantidade:</label>
+                <br>
+                <input type="number" id="qtdeInput" placeholder="Quantidade" required>
+            </div>
+
+            <div class="valorUnitario">
+                <label for="valorUnitário">Valor Unitário:</label>
+                <br>
+                <input type="number" id="vlrUnitInput" placeholder="Valor Unitário" required>
+            </div>
+        </div>
+
+        <div class="botao">
+            <button class="btn" id="btn" onclick="addItem()">Adicionar Ítem</button>
+        </div>
+    </table>
+
+    <div class="compra">
+        <div class="quantContainer">
+            <div class="quantProdutos">Quantidade de Volumes: &nbsp
+                <div class="quantTotalProdutos" id="quantTotalProdutos"></div>
+            </div>
+        </div>
+        <div class="quantContainer">
+            <div class="quatItens">Quantidade de ítens: &nbsp
+                <div class="quantTotalItens" id="quantTotalItens"></div>
+            </div>
+        </div>
+        <div class="quantContainer">
+            <div class="valorCompra">Valor Total Compra: R$&nbsp
+                <div class="valorTotalCompra" id="valorTotalCompra"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lista">
+        <div class="listaContainer">
+            <ul class="listaItem" id="listaItem" style="background-color:rgba(0, 0, 0, 0);">
+                <li class="listaTitulo">PRODUTO</li>
+            </ul>
+        </div>
+        <div class="listaContainer">
+            <ul class="listaQuantidade" id="listaQuantidade" style="background-color:rgba(0, 0, 0, 0);">
+                <li class="listaTitulo">QUANTIDADE</li>
+            </ul>
+        </div>
+        <div class="listaContainer">
+            <ul class="listaVlrUnit" id="listaVlrUnit" style="background-color:rgba(0, 0, 0, 0);">
+                <li class="listaTitulo">VALOR UNITÁRIO</li>
+            </ul>
+        </div>
+        <div class="listaContainer">
+            <ul class="listaTotalProduto" id="listaTotalProduto" style="background-color:rgba(0, 0, 0, 0);">
+                <li class="listaTitulo">TOTAL PRODUTO</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script/index.js"></script>
+</body>
+<footer>
+    <i>Em Desenvolvimento por Jonny Castro</i>
+</footer>
+</html>
+<!-- em desenvolvimendo por Jonny Castro -->

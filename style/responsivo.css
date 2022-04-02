@@ -1,0 +1,68 @@
+@media (max-width: 750px) {
+    body{
+        font-size: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .main{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .item,
+    .quantidade,
+    .valorUnitario{
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem;
+        background-color: silver;
+    }
+    .quantContainer{
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem;
+        background-color: silver;
+    }
+    ul{
+        padding-bottom: 10px;
+    }
+    .listaContainer li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+    }
+    .listaContainer{
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        padding-bottom: 20px;
+        padding-top: 30px;
+    }
+    .listaItem,
+    .listaQuantidade,
+    .listaVlrUnit,
+    .listaTotalProduto{
+        font-size: 14px;
+    }
+    .listaTitulo{
+        font-size: 16px;
+    }
+}
+@media (max-width: 425px){
+    .listaItem,
+    .listaQuantidade,
+    .listaVlrUnit,
+    .listaTotalProduto{
+        font-size: 12px;
+    }
+    .listaTitulo{
+        font-size: 12px;
+    }
+}
+@media(max-width: 380px){
+    .lista{
+        padding-left: 20px;
+    }
+}

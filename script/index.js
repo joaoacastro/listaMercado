@@ -56,6 +56,10 @@ function addItem(){
 
     document.getElementById("qtdeInput").value = '';
     document.getElementById("vlrUnitInput").value = '';
-
-    console.log(produtos)
 }
+
+addEventListener('keyup', function(e){
+    if (e.keyCode === 13){
+        addItem();
+    };
+});

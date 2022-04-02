@@ -11,22 +11,32 @@
 }
 .quantProdutos,
 .quatItens,
-.valorCompra {
+.valorCompra{
     padding: 10px;
 }
-
-.lista {
+.titulo{
+    padding: 15px;
+}
+.lista{
     display: flex;
     justify-content: center;
     color: white;
     border-radius: 10px;
     background-color: rgb(109, 109, 109);
+    padding: 15px;
 }
 li{
     display: flex;
     justify-content: center;
 }
 
+body{
+    min-height: 100vh;
+    background-color: #DADFE8;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
 .lista .listaItem li,
 .lista .listaQuantidade li,
 .lista .listaVlrUnit li,
@@ -35,17 +45,41 @@ li{
     padding-right: 14px;
 }
 
-.inserirProdutos,
+.listaItem,
+.listaQuantidade,
+.listaVlrUnit,
+.listaTotalProduto{
+	font-size: 16px;
+}
+.listaTitulo{
+    font-size: 20px;
+}
 .botao{
     display: flex;
     justify-content: center;
-    padding: 1px;
+    padding: 10px;
+    font-size: 18px;
 }
 .inserirProdutos,
-.compra {
+.compra,
+.lista {
     justify-content: space-around;
+}
+.inserirProdutos{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
 }
 .btn{
     border-radius: 15px;
     padding: 15px;
+}
+.listaContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
 }

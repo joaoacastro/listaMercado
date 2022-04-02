@@ -9,6 +9,9 @@
     display: flex;
     justify-content: center;
 }
+.subContainer{
+    padding-top: 50px;
+}
 .quantProdutos,
 .quatItens,
 .valorCompra{
@@ -33,11 +36,11 @@ li{
 }
 
 body{
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: #DADFE8;
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .lista .listaItem li,
@@ -57,12 +60,6 @@ body{
 .listaTitulo{
     font-size: 20px;
 }
-.botao{
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    font-size: 18px;
-}
 .inserirProdutos,
 .compra,
 .lista{
@@ -75,9 +72,19 @@ body{
     width: 100%;
     padding: 10px;
 }
+.compra{
+    border-top: dotted black 2px;
+}
 .btn{
     border-radius: 15px;
     padding: 15px;
+}
+.botao{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 18px;
 }
 .listaContainer{
     display: flex;
@@ -85,13 +92,4 @@ body{
     justify-content: center;
     padding-bottom: 10px;
     padding-top: 10px;
-}
-.main {
-    min-height: 100vh;
-}
-footer{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    background-color: white;
 }

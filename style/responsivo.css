@@ -7,7 +7,9 @@
     .main{
         padding-left: 100px;
         padding-right: 100px;
+        min-height: 100vh;
     }
+
     .item,
     .quantidade,
     .valorUnitario{

@@ -78,13 +78,20 @@ body{
 .btn{
     border-radius: 15px;
     padding: 15px;
+    cursor: pointer;
 }
 .botao{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding-top: 40px;
     padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 18px;
+}
+.botaoContainer{
+    display: flex;
+    justify-content: center;
 }
 .listaContainer{
     display: flex;

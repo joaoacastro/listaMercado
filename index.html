@@ -1,89 +1,73 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.:| Lista de Compras |:.</title>
+var produtos = [];
+var quantItens = [];
 
-    <link rel="shortcut icon" href="src/ico/ico_carrinho.png" type="image/x-icon">
+function addItem(){
+    var item = document.getElementById("item").value;
+    var qtdeInput = document.getElementById("qtdeInput").value;
+    var vlrUnitInput = document.getElementById("vlrUnitInput").value;
 
-    <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/global.css">
-    <link rel="stylesheet" href="style/responsivo.css">
-</head>
-<body>
-    <h2 class="titulo" style="font-size: 22px">.:| Lista de Compras |:.</h2>
-    <table class="container">
-        <div class="subContainer">
-            <div class="inserirProdutos">
-                <div class="item">
-                    <label for="Produto">Produto:</label>
-                    <br>
-                    <input type="text" id="item" placeholder="Produto" required>
-                </div>
-                
-                <div class="quantidade">
-                    <label for="Quantidade">Quantidade:</label>
-                    <br>
-                    <input type="number" id="qtdeInput" placeholder="Quantidade" required>
-                </div>
-    
-                <div class="valorUnitario">
-                    <label for="valorUnitário">Valor Unitário:</label>
-                    <br>
-                    <input type="number" id="vlrUnitInput" placeholder="Valor Unitário" required>
-                </div>
-            </div>
-        </div>
+    if (!item || !qtdeInput || !vlrUnitInput){
+        var alerta = alert("Ops, parece que faltou algo. 🤔 \n Por gentileza, preencha todos os campos!")
+    } else {
+        var listaItem = document.getElementById("listaItem");
+        var listaQuantidade = document.getElementById("listaQuantidade");
+        var listaVlrUnit = document.getElementById("listaVlrUnit");
+        var listaTotalProduto = document.getElementById("listaTotalProduto");
+        var totalCompra = document.getElementById("valorTotalCompra");
+        var totalProdutos = document.getElementById("quantTotalProdutos");
 
-        <div class="botao">
-            <button class="btn" id="btn" onclick="addItem()">Adicionar Ítem</button>
-        </div>
-    </table>
+        var totalItens = document.getElementById("quantTotalItens");
 
-    <div class="compra">
-        <div class="quantContainer">
-            <div class="quantProdutos">Quantidade de Volumes: &nbsp
-                <div class="quantTotalProdutos" id="quantTotalProdutos"></div>
-            </div>
-        </div>
-        <div class="quantContainer">
-            <div class="quatItens">Quantidade de ítens: &nbsp
-                <div class="quantTotalItens" id="quantTotalItens"></div>
-            </div>
-        </div>
-        <div class="quantContainer">
-            <div class="valorCompra">Valor Total Compra: R$&nbsp
-                <div class="valorTotalCompra" id="valorTotalCompra"></div>
-            </div>
-        </div>
-    </div>
+        var produto = {
+            item: document.getElementById("item").value,
+            quantidade: document.getElementById("qtdeInput").value,
+            valorUnitario: document.getElementById("vlrUnitInput").value,
+            totalItem:
+                document.getElementById("qtdeInput").value *
+                document.getElementById("vlrUnitInput").value
+        };
 
-    <div class="lista">
-        <div class="listaContainer">
-            <ul class="listaItem" id="listaItem" style="background-color:rgba(0, 0, 0, 0);">
-                <li class="listaTitulo">PRODUTO</li>
-            </ul>
-        </div>
-        <div class="listaContainer">
-            <ul class="listaQuantidade" id="listaQuantidade" style="background-color:rgba(0, 0, 0, 0);">
-                <li class="listaTitulo">QUANT.</li>
-            </ul>
-        </div>
-        <div class="listaContainer">
-            <ul class="listaVlrUnit" id="listaVlrUnit" style="background-color:rgba(0, 0, 0, 0);">
-                <li class="listaTitulo">VLR UNIT.</li>
-            </ul>
-        </div>
-        <div class="listaContainer">
-            <ul class="listaTotalProduto" id="listaTotalProduto" style="background-color:rgba(0, 0, 0, 0);">
-                <li class="listaTitulo">SUBTOTAL</li>
-            </ul>
-        </div>
-    </div>
-    
-    <script src="script/index.js"></script>
-</body>
-</html>
-<!-- em desenvolvimendo por Jonny Castro -->
+        produtos.push(produto);
+        
+        quantItens.push(produto.quantidade);
+
+        var item = '<li>' + produto.item + '</li>';
+        var quantidade = '<li>' + produto.quantidade + '</li>';
+        var valorUnitario = '<li> R$ ' + produto.valorUnitario + '</li>';
+        var subTotal = '<li> R$ ' + produto.totalItem.toFixed(2) + '</li>';
+
+        listaItem.innerHTML += item.toUpperCase();
+        listaQuantidade.innerHTML += quantidade;
+        listaVlrUnit.innerHTML += valorUnitario;
+        listaTotalProduto.innerHTML += subTotal;
+
+        totalProdutos.innerHTML = produtos.length;
+        
+        var total = produtos.reduce(getTotal, 0);
+        function getTotal(total, item){
+            return total + (item.valorUnitario * item.quantidade);
+        }
+
+        var quantTotalItens = quantItens.reduce(getTotalItens, 0);
+        function getTotalItens(valorAcumulado, produto){
+            return parseFloat(valorAcumulado) + parseFloat(produto);
+        }
+
+        totalItens.innerHTML = quantTotalItens;
+
+        totalCompra.innerHTML = ''
+        totalCompra.innerHTML = total.toFixed(2);
+
+        document.getElementById("item").value = '';
+        document.getElementById("item").focus();
+
+        document.getElementById("qtdeInput").value = '';
+        document.getElementById("vlrUnitInput").value = '';
+    }
+}
+
+addEventListener('keyup', function(e){
+    if (e.keyCode === 13){
+        addItem();
+    };
+});

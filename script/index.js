@@ -69,6 +69,7 @@ function addItem(){
 function delItem(){
     alert('Opa, vamos com calma 😅 \n Como o site ainda está em versão de testes, este botão ainda está em desenvolvimento!')
 }
+
 addEventListener('keyup', function(e){
     if (e.keyCode === 13){
         addItem();
